@@ -20,16 +20,16 @@ Terraform
 ->All outbound traffic
 
 
-1. what is terraform modules and why do we use ?
-2. what do you mean statefiles and how do secure those files?
-3. how to migrate existing environment which we created manually through terraform
-4. Some one has created the resource manually, you are shift in next moring , how do solve the problem and some drift detection happen and how do you restrict then?
-5. what are terraform commands you were using for day-today work?
-6. how do you unlock the terraform, if there lock happen?
-7. when running terrform apply ? the process gets hung. Now if you cancel that is might result in corrupt terraformstate. How would you debug this issue?
+1. what is Terraform modules and why do we use ?
+2. what do you mean by statefiles and how do secure those files?
+3. how to migrate existing environment that we created manually through terraform
+4. Someone has created the resource manually, you are on shift next morning, how do you solve the problem, and some drift detection happens, and how do you restrict them?
+5. What are the terraform commands you were using for day-today work?
+6. How do you unlock the terraform if the lock happens?
+7. When running terraform apply, the process gets hung. Now if you cancel that is might result in corrupt terraformstate. How would you debug this issue?
 8. Tell me about CI/CD tools that you worked?
-9. for each and count difference, provide examples in terraform
-10.You need to provision an ECS cluster using Terraform. Walk me through the modules and resources you’d use.
+9. For each and count the difference, provide examples in terraform
+10. You need to provision an ECS cluster using Terraform. Walk me through the modules and resources you’d use.
 
 
 AWS interview questions
@@ -122,3 +122,88 @@ Tell me about a time you implemented Infrastructure as Code using Terraform in a
 
 Automation
 Can you write a simple Python script that reads a list of EC2 instance names and instance types from a JSON file and outputs it for Terraform use?
+
+
+
+1)
+You are working in a team where the Terraform state is stored remotely in an S3 bucket.
+One day, the state file becomes corrupted or accidentally deleted.
+How will you recover the Terraform state and ensure no further impact on infrastructure?
+
+2)A teammate made manual changes to infrastructure outside of Terraform. How would you detect and reconcile these changes?
+  
+3)How would you enforce tagging, location, or size restrictions on AWS resources across all Terraform codebases?
+
+4) How do you securely manage Terraform state files and avoid exposing secrets?
+
+5)our Terraform plan shows significant drift in resources. Some were deleted manually and others changed. How do you handle this situation?
+
+
+
+Incorrect Resource Attribute
+
+resource "aws_instance" "web" {
+  ami           = "ami-12345678"
+  instance_type = "t2.micro"
+  zone          = "us-east-1a"
+}
+
+
+Create an EC2 Instance with Tags and Key Pair
+Provision an S3 Bucket with Versioning Enabled
+
+
+->You have a Spring Boot Java application packaged as a JAR file, named app.jar.
+->Your goal is to write a Dockerfile that builds a container image to run this application.
+
+
+
+Tell me about yourself?
+What are the AWS Services you worked?
+How did you set up the load balancers?
+where do you attach the certificates in to loadbalancer?
+How would you define loadbalancer in terms of scalability ?
+What are the components you define to create VPC?
+which context you worked on S3 bucket?
+route 53 overiew and architecture ?
+Describe Pipeline workflow?
+
+
+Terraform commands?
+how do you define the version and what is the importance of it ?
+how do you call the module?
+how u can fetch the secrets?
+when u run the plan what do u see ?
+how do you secure the state file?
+how can you control access/permissions in aws & how do u define?
+
+
+
+
+your ECS service is running fine, but under load, new tasks are not getting scheduled. What could be the possible issues?
+Your application logs need to be sent to CloudWatch from an ECS container. How will you configure this?
+Your pipeline pushes a new image to ECR and deploys to ECS. After the pipeline runs, the service is unhealthy. How do you troubleshoot this?
+you are tasked with migrating ECS services from EC2 launch type to Fargate. What steps would you follow and what challenges might you face?
+
+
+
+
+EC2 + Security
+
+“Your EC2 instance is launched but is not reachable over SSH. Walk me through how you’d debug this.”
+
+VPC Design
+
+“Can you design a secure VPC with public/private subnets, and expose a web app using an ALB?”
+
+IAM Policy
+
+“You’ve given an S3 full-access policy to a role, but your ECS task still can’t upload files. What would you check?”
+
+Monitoring
+
+“How would you set up alerting and logging for ECS tasks or Lambda functions?”
+
+Backup/Disaster Recovery
+
+“If RDS is deleted accidentally, how would you recover it? What should have been in place to avoid downtime?”
