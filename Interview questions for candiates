@@ -1,0 +1,124 @@
+====
+
+Tell me about yourself
+Explain current project 
+What is your day to day activity
+
+
+Terraform
+
+
+1.Create an S3 Bucket with Versioning and Tags
+
+->Bucket name should be dynamically passed as a variable.
+->Enable versioning on the bucket.
+->Add tags: Environment = dev and Owner = devops.
+
+
+2.Create a Security Group for a Web Application  
+->Inbound traffic on port 22 (SSH) and port 80 (HTTP) from anywhere
+->All outbound traffic
+
+
+1. what is terraform modules and why do we use ?
+2. what do you mean statefiles and how do secure those files?
+3. how to migrate existing environment which we created manually through terraform
+4. Some one has created the resource manually, you are shift in next moring , how do solve the problem and some drift detection happen and how do you restrict then?
+5. what are terraform commands you were using for day-today work?
+6. how do you unlock the terraform, if there lock happen?
+7. when running terrform apply ? the process gets hung. Now if you cancel that is might result in corrupt terraformstate. How would you debug this issue?
+8. Tell me about CI/CD tools that you worked?
+9. for each and count difference, provide examples in terraform
+10.You need to provision an ECS cluster using Terraform. Walk me through the modules and resources you’d use.
+
+
+AWS interview questions
+
+
+What are the AWS Services you worked?
+
+How did you set up the load balancers?
+
+where do you attach the certificates in to loadbalancer?
+
+How would you define loadbalancer in terms of scalability ?
+
+What are the components you define to create VPC?
+
+which context you worked on S3 bucket?
+
+route 53 overiew and architecture ?
+
+
+your ECS service is running fine, but under load, new tasks are not getting scheduled. What could be the possible issues?
+Your application logs need to be sent to CloudWatch from an ECS container. How will you configure this?
+Your pipeline pushes a new image to ECR and deploys to ECS. After the pipeline runs, the service is unhealthy. How do you troubleshoot this?
+you are tasked with migrating ECS services from EC2 launch type to Fargate. What steps would you follow and what challenges might you face?
+How do you securely pass environment variables like DB passwords to ECS tasks via Terraform
+
+
+iN jENKINS - cicd
+
+Please share additional profiles at the earliest.
+
+
+
+
+
+1.How do you design a fault-tolerant architecture in the cloud?
+
+2.Your AWS bill spiked unexpectedly this month. Walk through your approach to investigate, fix, and prevent this in the future
+
+3.Your application is currently a monolith running on EC2. The business wants to scale features independently. The CTO asks you to lead a migration to microservices using containers. How would you plan and execute this in AWS?
+what AWS services would you use to host, deploy, and scale these services securely and efficiently?
+
+4. You currently have a web application running on a single EC2 instance. The business expects higher traffic soon. How would you migrate this setup to support scaling, high availability, and fault tolerance?
+
+5.You need to migrate a MySQL database from on-premises to AWS with minimal downtime. What approach would you take, and what challenges might arise?
+
+6.You’re tasked with moving a Node.js app from EC2 to containers using AWS ECS. What steps will you follow, and what AWS services will be involved?
+
+7.If RDS is hosted in us-west region and has read replicas spread across other region, due to some issue us-west region is down, how will you redirect your traffic. But having one more DB is expensive to the client
+
+8.Explain a Recent challegence that you have faced with AWS and how did you solve it
+
+9. Difference between NACL VS SG
+
+10. what will you do when AWS RDS is Full 
+
+
+Docker
+
+1. difference between CMD and entry point?
+2. Data is lost when container stop and restart, how will you fix it
+3. write an docker file for node.js app
+
+
+Kubernets
+
+Exaplain about kubernetes architceture
+what are different types if service in kuberenets
+explain the deployment stargegy that you follow in orgnanziation
+How to you upgrade the EKS cluster in AWS and what are steps that you followed 
+Explaim the rollback straegy that yiy follow in your ognanization
+
+
+
+Git
+
+What is git branching strategy used in your organisation
+
+what is deployment starartgeies you have worked on
+
+what are git commands that you have used
+
+
+
+Begioural question:
+
+Describe a high-pressure incident where infrastructure went down due to a bad deployment. How did you manage it and what did you learn?
+Describe a time you made a mistake in a Terraform config that affected production. What was the outcome and how did you prevent it from happening again?
+Tell me about a time you implemented Infrastructure as Code using Terraform in a large-scale project. What were the challenges and how did you overcome them?
+
+Automation
+Can you write a simple Python script that reads a list of EC2 instance names and instance types from a JSON file and outputs it for Terraform use?
